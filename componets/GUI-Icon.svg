@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <rect id="px" width="16" height="16" rx="2" />
+  </defs>
+  
+  <g transform="translate(10, 10)" fill="#0066FF">
+    <use href="#px" x="18" y="0"/>
+    <use href="#px" x="36" y="0"/>
+    <use href="#px" x="54" y="0" fill="#cbd5e1"/> 
+    <use href="#px" x="0" y="18"/>
+    <use href="#px" x="0" y="36"/>
+    <use href="#px" x="36" y="36"/>
+    <use href="#px" x="54" y="36" fill="#cbd5e1"/> 
+    <use href="#px" x="0" y="54"/>
+    <use href="#px" x="54" y="54" fill="#cbd5e1"/> 
+    <use href="#px" x="18" y="72"/>
+    <use href="#px" x="36" y="72"/>
+    <use href="#px" x="54" y="72" fill="#cbd5e1"/> 
+  </g>
+</svg>

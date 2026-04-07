@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <path id="orbit" d="M 90,250 A 160,60 0 1,0 410,250 A 160,60 0 1,0 90,250" 
+          fill="none" stroke="#475569" stroke-width="1.5" opacity="0.6"/>
+    
+    <rect id="px" width="16" height="16" rx="2" />
+    
+    <circle id="electron" r="6" fill="#ffffff" />
+  </defs>
+
+  <rect width="500" height="500" fill="#1e293b" />
+
+  <g><use href="#orbit"/></g>
+  <g transform="rotate(60, 250, 250)"><use href="#orbit"/></g>
+  <g transform="rotate(-60, 250, 250)"><use href="#orbit"/></g>
+
+  <g transform="translate(215, 206)" fill="#0066FF">
+    <use href="#px" x="18" y="0"/>
+    <use href="#px" x="36" y="0"/>
+    <use href="#px" x="54" y="0" fill="#cbd5e1"/> 
+    <use href="#px" x="0" y="18"/>
+    <use href="#px" x="0" y="36"/>
+    <use href="#px" x="36" y="36"/>
+    <use href="#px" x="54" y="36" fill="#cbd5e1"/> 
+    <use href="#px" x="0" y="54"/>
+    <use href="#px" x="54" y="54" fill="#cbd5e1"/> 
+    <use href="#px" x="18" y="72"/>
+    <use href="#px" x="36" y="72"/>
+    <use href="#px" x="54" y="72" fill="#cbd5e1"/> 
+  </g>
+
+  <g>
+    <use href="#electron">
+      <animateMotion dur="4s" repeatCount="indefinite"><mpath href="#orbit"/></animateMotion>
+    </use>
+  </g>
+  <g transform="rotate(60, 250, 250)">
+    <use href="#electron">
+      <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#orbit"/></animateMotion>
+    </use>
+  </g>
+  <g transform="rotate(-60, 250, 250)">
+    <use href="#electron">
+      <animateMotion dur="6s" repeatCount="indefinite"><mpath href="#orbit"/></animateMotion>
+    </use>
+  </g>
+
+  <g text-anchor="middle" font-family="Times New Roman">
+    <text x="254" y="435" font-size="38" font-weight="900" fill="#ffffff" letter-spacing="10">GRAYS</text>
+    <text x="254" y="465" font-size="12" font-weight="500" fill="#94a3b8" letter-spacing="8">UNIVERSAL INDUSTRIES</text>
+  </g>
+</svg>

@@ -1,0 +1,158 @@
+#warpCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; 
+    background: #0f172a;
+}
+
+.glass-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 41, 59, 0.6);
+}
+
+.icon-box {
+    font-weight: 900;
+    font-size: 0.8rem;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.logo-hero-container {
+    width: 100%;
+    max-width: 650px; /* Give the orbits plenty of room */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible; /* Essential so orbits don't clip */
+}
+
+.gui-logo-svg {
+    width: 100%;
+    height: auto;
+    /* This makes the GLOW follow the actual pixels of the G and orbits, 
+       NOT the square box of the image! */
+    filter: drop-shadow(0 0 20px rgba(0, 102, 255, 0.4));
+}
+
+.hero-logo-glow {
+    width: 100%; 
+    height: auto;
+    /* We use a drop-shadow instead of a box-shadow to follow the SHAPE of the G, not the box */
+    filter: drop-shadow(0 0 30px rgba(0, 102, 255, 0.6));
+    transform: scale(1.2); /* Make it feel more impactful */
+}
+
+.fade-in {
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.hero-logo-wrapper {
+    perspective: 1000px; /* Needed for the 3D tilt effect */
+}
+
+.hero-svg {
+    transition: transform 0.1s ease-out; /* Smooths the mouse following */
+    transform-style: preserve-3d;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.project-strip {
+    display: block;
+    padding: 2.5rem 0;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.strip-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.strip-num {
+    font-family: 'Fira Code', monospace;
+    color: #475569; /* Slate 500 */
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.strip-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.strip-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #94a3b8; /* Slate 400 */
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s ease;
+}
+
+.strip-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.4s ease;
+}
+
+/* Hover Effects */
+.project-strip {
+    display: block;
+    padding: 3rem 0;
+    position: relative;
+    cursor: crosshair;
+}
+
+.strip-title {
+    font-size: clamp(2rem, 5vw, 4rem); /* Responsive text size */
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project-strip:hover .strip-title {
+    color: #0066FF;
+    transform: translateX(30px);
+    letter-spacing: 2px;
+}
+
+.strip-tag {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    color: #475569;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.project-strip:hover .strip-tag {
+    opacity: 1;
+    color: #ffffff;
+}

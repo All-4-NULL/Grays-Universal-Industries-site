@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Grays Universal Industries</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#050505] text-slate-50 overflow-x-hidden">
+
+    <canvas id="warpCanvas"></canvas>
+
+    <div class="relative z-10">
+        <nav class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto w-full">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="componets/GUI-Icon.svg" alt="GUI" class="w-8 h-8 group-hover:rotate-90 transition-transform duration-500">
+                <span class="font-black tracking-tighter text-xl">GUI</span>
+            </a>
+            <a href="index.html" class="text-sm font-mono text-blue-500 hover:text-white transition-colors">/ RETURN_HOME</a>
+        </nav>
+
+        <section class="max-w-7xl mx-auto w-full px-8 py-20">
+            <div class="mb-20">
+                <h1 class="text-6xl font-black tracking-tighter uppercase italic fade-in">Project <span class="text-blue-500">Archive</span></h1>
+                <p class="text-slate-500 font-mono mt-4 border-l-2 border-blue-600 pl-4">STATUS: ALL_SYSTEMS_OPERATIONAL</p>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <div class="project-strip group">
+                    <div class="strip-content">
+                        <span class="strip-num">-</span>
+                        <h3 class="strip-title">Barker Creek Nursery</h3>
+                        <span class="strip-tag">Web Architecture // E-Commerce</span>
+                    </div>
+                    <div class="strip-line"></div>
+                </div>
+
+                <div class="project-strip group">
+                    <div class="strip-content">
+                        <span class="strip-num">-</span>
+                        <h3 class="strip-title">Operations Hub V2</h3>
+                        <span class="strip-tag">Software Systems // Internal Tools</span>
+                    </div>
+                    <div class="strip-line"></div>
+                </div>
+
+                <div class="project-strip group">
+                    <div class="strip-content">
+                        <span class="strip-num">-</span>
+                        <h3 class="strip-title">Media Management</h3>
+                        <span class="strip-tag">Content Systems // Engagement</span>
+                    </div>
+                    <div class="strip-line"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
