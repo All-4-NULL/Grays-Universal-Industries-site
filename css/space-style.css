@@ -1,0 +1,53 @@
+ /* CSS */
+#space {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -1;
+    pointer-events: none; /* IMPORTANT: Let's clicks pass through to buttons and inputs */
+}
+
+body {
+    background-color: #030303; /* jetblack for now will see what options there are for vantablack and if its possible */
+    color: #f8fafc;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Glassmorphism */
+.glass-card {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo-glow {
+    color: #3b82f6 !important; 
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.5);
+}
+
+#logo-text {
+    display: inline-flex;
+    transition: all 0.4s ease-in-out;
+}
+
+/* controls the letters that will disappear */
+.drop {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 1;
+    max-width: 200px; /*starting width */
+    /*  shrinking and fading motion */
+    transition: max-width 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+}
+
+/* JS will add this class to trigger the slide */
+.drop.collapsed {
+    max-width: 0px;
+    opacity: 0;
+}
+
+.fade-in { animation: fadeIn 2s ease-in; }
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+
