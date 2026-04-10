@@ -49,24 +49,44 @@
             </header>
 
             <section class="max-w-7xl mx-auto w-full px-8 py-12">
-                <div class="glass-card p-1 rounded-2xl border border-blue-500/20 shadow-2xl">
+                <div class="glass-card p-1 rounded-2xl border border-blue-500/20 shadow-2xl transition-all duration-300 hover:shadow-blue-500/20 hover:border-blue-500/40">
                     <div class="bg-[#050505]/80 rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12">
                         <div class="flex-1 space-y-6">
                             <div class="inline-block px-3 py-1 bg-blue-500/10 text-blue-400 font-mono text-xs tracking-widest uppercase rounded border border-blue-500/20">
                                 Featured Infrastructure
                             </div>
-                            <h2 class="text-3xl md:text-4xl font-bold text-white">Ventured <span class="text-blue-500">Skies</span></h2>
+                            <h2 class="text-3xl md:text-4xl font-bold">
+                                <span class="text-white">Ventured</span> 
+                                <span class="bg-gradient-to-r from-orange-400 via-rose-500 to-purple-500 bg-clip-text text-transparent">Skies</span>
+                            </h2>
+                                        
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-slate-800/50 border border-slate-700 rounded text-xs font-mono text-slate-300">HTML5 & CSS3</span>
+                                <span class="px-2 py-1 bg-slate-800/50 border border-slate-700 rounded text-xs font-mono text-slate-300">JavaScript (ES6+)</span>
+                                <span class="px-2 py-1 bg-slate-800/50 border border-slate-700 rounded text-xs font-mono text-slate-300">Web3Forms API</span>
+                                <span class="px-2 py-1 bg-slate-800/50 border border-slate-700 rounded text-xs font-mono text-slate-300">GSAP Engine</span>
+                            </div>
+
                             <p class="text-slate-400 leading-relaxed text-sm">
                                 Commercial drone operations require serious digital infrastructure. We architected and deployed a highly optimized, responsive web presence for Ventured Skies LLC, seamlessly integrating high-resolution aerial media with automated client lead generation.
                             </p>
-                            <a href="https://venturedskies.graysuniversal.tech" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded transition-all uppercase tracking-widest mt-4">
-                                View Live Architecture 
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </a>
+                            
+                            <div class="flex flex-wrap items-center gap-4 mt-4">
+                                <a href="https://ventured-skies-llc.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded transition-all uppercase tracking-widest">
+                                    View Live Architecture 
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </a>
+                                
+                                <a href="https://github.com/ALL-4-NULL/Ventured-Skies-LLC-Website" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-white px-4 py-3 rounded transition-all uppercase tracking-widest border border-slate-700 hover:border-slate-500">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                                    Source Code
+                                </a>
+                            </div>
                         </div>
-                        <div class="flex-1 w-full relative group">
-                            <div class="aspect-video bg-slate-900 rounded-lg border border-slate-700 overflow-hidden relative flex items-center justify-center">
-                                <span class="text-slate-600 font-mono text-sm absolute z-0">[ Ventured Skies LLC ]</span>
+                        <div class="flex-1 w-full relative group cursor-pointer overflow-hidden rounded-lg">
+                            <div class="aspect-video bg-slate-900 border border-slate-700 overflow-hidden relative flex items-center justify-center">
+                                <img src="componets/media/Ventured-Skies-Homepage.png" alt="Ventured Skies Interface" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                                <div class="absolute inset-0 border border-blue-500/0 group-hover:border-blue-500/50 transition-colors duration-500 z-10 pointer-events-none rounded-lg"></div>
                             </div>
                         </div>
                     </div>
