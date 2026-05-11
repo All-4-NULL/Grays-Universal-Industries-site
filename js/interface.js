@@ -5,20 +5,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const drops = document.querySelectorAll(".drop");
     
     if (logoText && drops.length > 0) {
+        const isMobile = window.matchMedia("(max-width: 767px)").matches;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const initialDelay = prefersReducedMotion ? 0 : isMobile ? 220 : 1500;
+        const holdBeforeCollapse = prefersReducedMotion ? 0 : isMobile ? 200 : 800;
+        const glowClearDelay = prefersReducedMotion ? 0 : isMobile ? 450 : 800;
+
         setTimeout(() => {
-            logoText.classList.add("logo-glow");
-            logoText.style.transform = "scale(1.05)";
-            
+            if (!prefersReducedMotion) {
+                logoText.classList.add("logo-glow");
+                logoText.style.transform = "scale(1.05)";
+            }
+
             setTimeout(() => {
-                drops.forEach(drop => drop.classList.add("collapsed"));
-                
+                drops.forEach((drop) => drop.classList.add("collapsed"));
+
                 setTimeout(() => {
                     logoText.classList.remove("logo-glow");
                     logoText.style.transform = "scale(1)";
-                }, 800);
-                
-            }, 800); 
-        }, 1500); 
+                }, glowClearDelay);
+            }, holdBeforeCollapse);
+        }, initialDelay);
     }
 
     // --- 2. MOBILE MENU LOGIC ---
