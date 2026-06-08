@@ -49,8 +49,8 @@
     }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/tailwind.css?v=20260608">
-    <link rel="stylesheet" href="css/space-style.css?v=20260608">
+    <link rel="stylesheet" href="css/tailwind.css?v=20260608b">
+    <link rel="stylesheet" href="css/space-style.css?v=20260608b">
 </head>
 <body>
 
@@ -58,16 +58,17 @@
 
     <div class="relative z-10">
         <nav aria-label="Main navigation" class="site-nav sticky top-4 mx-4 lg:mx-auto max-w-7xl flex min-w-0 justify-between items-center gap-2 px-4 lg:px-8 py-4 w-auto rounded-2xl border border-white/10 bg-black/35 backdrop-blur-xl shadow-[0_14px_40px_rgba(0,0,0,0.45)] relative z-50">
-            <a href="index.html" aria-label="Grays Universal Industries home" class="flex min-w-0 shrink items-center gap-2 hover:opacity-90 transition-opacity z-50">
-                <div class="brand-wordmark nav-logo-mark text-sm lg:text-xl flex min-w-0 items-center">
-                    <span id="logo-text" class="inline-flex items-center" aria-hidden="true">
+            <a href="index.html" aria-label="Grays Universal Industries home" class="flex min-w-0 flex-1 lg:flex-initial items-center gap-2 hover:opacity-90 transition-opacity z-50 overflow-hidden">
+                <div class="brand-wordmark nav-logo-mark text-sm lg:text-base xl:text-xl flex min-w-0 items-center max-w-full">
+                    <span id="logo-text" class="inline-flex items-center min-w-0" aria-hidden="true">
                         <span class="logo-gui lg:hidden"><span class="logo-char">G</span><span class="logo-char">U</span><span class="logo-char">I</span></span>
-                        <span class="logo-full hidden lg:inline">GRAYS UNIVERSAL INDUSTRIES</span>
+                        <span class="logo-mid hidden lg:inline xl:hidden">GRAYS UNIVERSAL</span>
+                        <span class="logo-full hidden xl:inline">GRAYS UNIVERSAL INDUSTRIES</span>
                     </span>
                 </div>
             </a>
 
-            <div class="hidden lg:flex gap-6 xl:gap-8 items-center shrink-0">
+            <div class="hidden lg:flex gap-3 xl:gap-6 2xl:gap-8 items-center shrink-0 min-w-0">
                 <a href="index.html#services" class="metal-link">Services</a>
                 <a href="portfolio.html" class="metal-link">Portfolio</a>
                 <a href="index.html#faq" class="metal-link">FAQ</a>
@@ -134,11 +135,6 @@
                                     Visit Site
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </a>
-                                
-                                <a href="https://github.com/ALL-4-NULL/Ventured-Skies-LLC-Website" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-white px-4 py-3 rounded transition-all border border-slate-700 hover:border-slate-500">
-                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
-                                    View on GitHub
-                                </a>
                             </div>
                         </div>
                         <div class="flex-1 w-full relative group cursor-pointer overflow-hidden rounded-lg">
@@ -178,10 +174,6 @@
                                 <span class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 px-6 py-3 rounded border border-slate-700 cursor-not-allowed">
                                     Site launching soon
                                 </span>
-
-                                <span class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 px-4 py-3 rounded border border-slate-700 cursor-not-allowed">
-                                    GitHub link coming soon
-                                </span>
                             </div>
                         </div>
                         <div class="flex-1 w-full relative group overflow-hidden rounded-lg">
@@ -220,10 +212,6 @@
                             <div class="flex flex-wrap items-center gap-4 mt-4">
                                 <span class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 px-6 py-3 rounded border border-slate-700 cursor-not-allowed">
                                     Site launching soon
-                                </span>
-
-                                <span class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 px-4 py-3 rounded border border-slate-700 cursor-not-allowed">
-                                    GitHub link coming soon
                                 </span>
                             </div>
                         </div>
@@ -270,10 +258,6 @@
                                     Open GUI Hub
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </a>
-
-                                <span class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 px-4 py-3 rounded border border-slate-700 cursor-not-allowed">
-                                    GitHub link coming soon
-                                </span>
                             </div>
                         </div>
                         <div class="flex-1 w-full relative group overflow-hidden rounded-lg">
@@ -312,10 +296,6 @@
                             <div class="flex flex-wrap items-center gap-4 mt-4">
                                 <span class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 px-6 py-3 rounded border border-slate-700 cursor-not-allowed">
                                     App launching soon
-                                </span>
-
-                                <span class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 px-4 py-3 rounded border border-slate-700 cursor-not-allowed">
-                                    GitHub link coming soon
                                 </span>
                             </div>
                         </div>
@@ -416,7 +396,7 @@
             </p>
         </footer>
     
-    <script src="js/space-engine.js?v=20260608"></script>
-    <script src="js/interface.js?v=20260608"></script>
+    <script src="js/space-engine.js?v=20260608b"></script>
+    <script src="js/interface.js?v=20260608b"></script>
 </body>
 </html>

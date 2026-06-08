@@ -94,6 +94,7 @@ a:focus-visible .nav-logo-mark {
 }
 
 .brand-wordmark .logo-gui,
+.brand-wordmark .logo-mid,
 .brand-wordmark .logo-full {
     font-weight: 800;
     background: linear-gradient(
@@ -115,6 +116,11 @@ a:focus-visible .nav-logo-mark {
 
 .brand-wordmark .logo-gui {
     letter-spacing: 0.26em;
+}
+
+.brand-wordmark .logo-mid {
+    letter-spacing: 0.12em;
+    font-weight: 700;
 }
 
 .brand-wordmark .logo-full {
@@ -143,6 +149,7 @@ a:focus-visible .nav-logo-mark {
 }
 
 .brand-wordmark #logo-text.logo-glow .logo-gui,
+.brand-wordmark #logo-text.logo-glow .logo-mid,
 .brand-wordmark #logo-text.logo-glow .logo-full {
     filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.75)) drop-shadow(0 0 24px rgba(147, 197, 253, 0.45));
     animation: metalTextShimmer 2.5s ease-in-out infinite, logoMetalPulse 0.65s ease-in-out;
@@ -187,13 +194,32 @@ a:focus-visible .nav-logo-mark {
 }
 
 @media (max-width: 1023px) {
+    .brand-wordmark .logo-mid,
     .brand-wordmark .logo-full {
         display: none !important;
     }
 }
 
-@media (min-width: 1024px) {
-    .brand-wordmark .logo-gui {
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .brand-wordmark .logo-gui,
+    .brand-wordmark .logo-full {
+        display: none !important;
+    }
+
+    .brand-wordmark .logo-mid {
+        letter-spacing: 0.1em;
+    }
+
+    .site-nav .metal-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+    }
+}
+
+@media (min-width: 1280px) {
+    .brand-wordmark .logo-gui,
+    .brand-wordmark .logo-mid {
         display: none !important;
     }
 
@@ -235,6 +261,7 @@ a:focus-visible .nav-logo-mark {
 
     .brand-slogan-hero,
     .brand-wordmark .logo-gui,
+    .brand-wordmark .logo-mid,
     .brand-wordmark .logo-full {
         animation: none;
         background-position: 0% 50%;
