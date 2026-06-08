@@ -1,34 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-            
-    // --- 1. LOGO ANIMATION SEQUENCE (SLIDING EFFECT) ---
     const logoText = document.getElementById("logo-text");
-    const drops = document.querySelectorAll(".drop");
-    
-    if (logoText && drops.length > 0) {
-        const isMobile = window.matchMedia("(max-width: 767px)").matches;
-        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const initialDelay = prefersReducedMotion ? 0 : isMobile ? 220 : 1500;
-        const holdBeforeCollapse = prefersReducedMotion ? 0 : isMobile ? 200 : 800;
-        const glowClearDelay = prefersReducedMotion ? 0 : isMobile ? 450 : 800;
+    const mobileQuery = window.matchMedia("(max-width: 1023px)");
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    function runLogoAnimation() {
+        if (!logoText) return;
+
+        logoText.classList.add("animate-in");
+
+        if (reducedMotionQuery.matches) {
+            return;
+        }
+
+        const isMobile = mobileQuery.matches;
+        const introDelay = isMobile ? 200 : 700;
+        const glowHold = isMobile ? 450 : 650;
 
         setTimeout(() => {
-            if (!prefersReducedMotion) {
-                logoText.classList.add("logo-glow");
-                logoText.style.transform = "scale(1.05)";
-            }
+            logoText.classList.add("logo-glow");
 
             setTimeout(() => {
-                drops.forEach((drop) => drop.classList.add("collapsed"));
-
-                setTimeout(() => {
-                    logoText.classList.remove("logo-glow");
-                    logoText.style.transform = "scale(1)";
-                }, glowClearDelay);
-            }, holdBeforeCollapse);
-        }, initialDelay);
+                logoText.classList.remove("logo-glow");
+            }, glowHold);
+        }, introDelay);
     }
 
-    // --- 2. MOBILE MENU LOGIC ---
+    runLogoAnimation();
+
+    // --- MOBILE MENU LOGIC ---
     const menuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
     
@@ -63,4 +62,95 @@ document.addEventListener("DOMContentLoaded", () => {
         menuBtn.addEventListener("click", toggleMenu);
         mobileLinks.forEach(link => link.addEventListener("click", toggleMenu));
     }
+
+    function setupAccordion(selector) {
+        const cards = document.querySelectorAll(selector);
+
+        cards.forEach((card) => {
+            const trigger = card.querySelector(".service-card-trigger");
+
+            if (!trigger) return;
+
+            trigger.addEventListener("click", () => {
+                const isOpen = card.classList.contains("is-open");
+
+                cards.forEach((otherCard) => {
+                    otherCard.classList.remove("is-open");
+                    const otherTrigger = otherCard.querySelector(".service-card-trigger");
+                    if (otherTrigger) otherTrigger.setAttribute("aria-expanded", "false");
+                });
+
+                if (!isOpen) {
+                    card.classList.add("is-open");
+                    trigger.setAttribute("aria-expanded", "true");
+                }
+            });
+        });
+    }
+
+    setupAccordion(".service-card:not(.faq-card)");
+    setupAccordion(".faq-card");
+
+    const serviceMultiselects = document.querySelectorAll("[data-services-multiselect]");
+
+    serviceMultiselects.forEach((multiselect) => {
+        const trigger = multiselect.querySelector(".services-multiselect-trigger");
+        const valueLabel = multiselect.querySelector(".services-multiselect-value");
+        const hiddenInput = multiselect.querySelector('input[type="hidden"][name="services"]');
+        const checkboxes = multiselect.querySelectorAll('.services-multiselect-option input[type="checkbox"]');
+
+        if (!trigger || !valueLabel || !hiddenInput || checkboxes.length === 0) return;
+
+        function updateSelection() {
+            const selected = Array.from(checkboxes)
+                .filter((box) => box.checked)
+                .map((box) => box.value);
+
+            hiddenInput.value = selected.join(", ");
+
+            if (selected.length === 0) {
+                valueLabel.textContent = "Select one or more services";
+                trigger.classList.remove("has-selection");
+            } else if (selected.length === 1) {
+                valueLabel.textContent = selected[0];
+                trigger.classList.add("has-selection");
+            } else {
+                valueLabel.textContent = `${selected.length} services selected`;
+                trigger.classList.add("has-selection");
+            }
+        }
+
+        function closePanel() {
+            multiselect.classList.remove("is-open");
+            trigger.setAttribute("aria-expanded", "false");
+        }
+
+        trigger.addEventListener("click", () => {
+            const isOpen = multiselect.classList.contains("is-open");
+            serviceMultiselects.forEach((other) => {
+                other.classList.remove("is-open");
+                const otherTrigger = other.querySelector(".services-multiselect-trigger");
+                if (otherTrigger) otherTrigger.setAttribute("aria-expanded", "false");
+            });
+
+            if (!isOpen) {
+                multiselect.classList.add("is-open");
+                trigger.setAttribute("aria-expanded", "true");
+            }
+        });
+
+        checkboxes.forEach((box) => {
+            box.addEventListener("change", updateSelection);
+        });
+
+        multiselect.closest("form")?.addEventListener("submit", updateSelection);
+
+        document.addEventListener("click", (event) => {
+            if (!multiselect.contains(event.target)) closePanel();
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") closePanel();
+        });
+    });
 });

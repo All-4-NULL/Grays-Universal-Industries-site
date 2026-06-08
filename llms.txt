@@ -1,0 +1,36 @@
+# Grays Universal Industries LLC
+
+> Web design, apps, and digital services based in Traverse City, Michigan.
+
+## About
+Grays Universal Industries LLC builds websites, web apps, software, branding, social media content, and hosting for businesses in Michigan and across the United States.
+
+## Location
+Traverse City, Michigan, United States
+
+## Contact
+Email: GraysUniversalIndustries@gmail.com
+Website: https://graysuniversal.tech/
+
+## Services
+- Web Design
+- Apps and Software Development
+- Social Media Management
+- Graphic, Logo, UI and UX Design
+- Server Hosting
+
+## Portfolio highlights
+- Ventured Skies (commercial drone website): https://ventured-skies-llc.com
+- Landick Photo and Film (website in development)
+- Nessas Daycare (website in development)
+- GUI Hub (client portal): https://hub.graysuniversal.tech/login/
+- Font 12 (typography web app, in development)
+
+## Pricing
+Projects are quoted individually. There is no public price list on the website.
+
+## Key pages
+- Home: https://graysuniversal.tech/
+- Portfolio: https://graysuniversal.tech/portfolio.html
+- FAQ: https://graysuniversal.tech/#faq
+- Contact: https://graysuniversal.tech/#contact

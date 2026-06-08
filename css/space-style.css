@@ -7,6 +7,10 @@
     pointer-events: none; /* IMPORTANT: Let's clicks pass through to buttons and inputs */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #030303; /* jetblack for now will see what options there are for vantablack and if its possible */
     color: #f8fafc;
@@ -21,6 +25,132 @@ body {
     text-transform: uppercase;
     color: #f8fafc;
     text-shadow: 0 0 16px rgba(148, 163, 184, 0.24);
+}
+
+.brand-slogan {
+    font-family: 'Orbitron', 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(203, 213, 225, 0.95);
+}
+
+.brand-slogan-hero {
+    background: linear-gradient(
+        90deg,
+        #a855f7 0%,
+        #6366f1 12%,
+        #2563eb 24%,
+        #0066ff 36%,
+        #10b981 48%,
+        #22d3ee 60%,
+        #06b6d4 72%,
+        #ec4899 84%,
+        #f472b6 92%,
+        #a855f7 100%
+    );
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: sloganSpectrum 20s ease-in-out infinite;
+}
+
+.brand-slogan-muted {
+    color: #64748b;
+    text-shadow: 0 0 10px rgba(148, 163, 184, 0.2);
+}
+
+@keyframes sloganSpectrum {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes metalTextShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.brand-wordmark #logo-text {
+    font-family: 'Orbitron', 'Inter', sans-serif;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.nav-logo-mark {
+    padding: 0.4rem 0.7rem;
+    border-radius: 0.65rem;
+    border: 1px solid rgba(248, 250, 252, 0.2);
+    background: linear-gradient(145deg, rgba(248, 250, 252, 0.1), rgba(100, 116, 139, 0.14) 42%, rgba(15, 23, 42, 0.4));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -8px 14px rgba(15, 23, 42, 0.4), 0 6px 18px rgba(15, 23, 42, 0.35);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+a:hover .nav-logo-mark,
+a:focus-visible .nav-logo-mark {
+    border-color: rgba(191, 219, 254, 0.45);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), inset 0 -6px 12px rgba(30, 58, 138, 0.25), 0 8px 24px rgba(59, 130, 246, 0.22);
+}
+
+.brand-wordmark .logo-gui,
+.brand-wordmark .logo-full {
+    font-weight: 800;
+    background: linear-gradient(
+        100deg,
+        #64748b 0%,
+        #cbd5e1 20%,
+        #f8fafc 38%,
+        #93c5fd 52%,
+        #e2e8f0 68%,
+        #64748b 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: metalTextShimmer 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.25));
+}
+
+.brand-wordmark .logo-gui {
+    letter-spacing: 0.26em;
+}
+
+.brand-wordmark .logo-full {
+    letter-spacing: 0.09em;
+    font-weight: 700;
+}
+
+.brand-wordmark .logo-gui .logo-char {
+    display: inline-block;
+    animation: logoCharPop 0.55s cubic-bezier(0.25, 1, 0.5, 1) backwards;
+}
+
+.brand-wordmark .logo-gui .logo-char:nth-child(1) { animation-delay: 0.05s; }
+.brand-wordmark .logo-gui .logo-char:nth-child(2) { animation-delay: 0.18s; }
+.brand-wordmark .logo-gui .logo-char:nth-child(3) { animation-delay: 0.31s; }
+
+@keyframes logoCharPop {
+    from {
+        opacity: 0;
+        transform: translateY(0.45em) scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.brand-wordmark #logo-text.logo-glow .logo-gui,
+.brand-wordmark #logo-text.logo-glow .logo-full {
+    filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.75)) drop-shadow(0 0 24px rgba(147, 197, 253, 0.45));
+    animation: metalTextShimmer 2.5s ease-in-out infinite, logoMetalPulse 0.65s ease-in-out;
+}
+
+@keyframes logoMetalPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
 }
 
 /* Glassmorphism */
@@ -38,37 +168,81 @@ body {
 #logo-text {
     display: inline-flex;
     max-width: 100%;
-    transition: all 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
 }
 
-@media (max-width: 767px) {
-    #logo-text {
-        flex-wrap: wrap;
-        row-gap: 0.08em;
-        font-size: clamp(0.5625rem, 2.85vw, 0.8125rem);
-        letter-spacing: 0.05em;
+#logo-text.animate-in {
+    animation: logoFadeIn 0.55s cubic-bezier(0.25, 1, 0.5, 1) backwards;
+}
+
+@keyframes logoFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(0.35em);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1023px) {
+    .brand-wordmark .logo-full {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .brand-wordmark .logo-gui {
+        display: none !important;
     }
 
-    .brand-wordmark {
-        letter-spacing: 0.06em;
+    .brand-wordmark .logo-full {
+        letter-spacing: 0.08em;
     }
 }
 
-/* controls the letters that will disappear */
-.drop {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    opacity: 1;
-    max-width: 200px; /*starting width */
-    /*  shrinking and fading motion */
-    transition: max-width 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+/* Medium viewports use the same compact page rhythm as mobile */
+@media (max-width: 1023px) {
+    .site-nav {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 0.5rem;
+    }
+
+    .site-section {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .site-heading-xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+
+    .site-heading-lg {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
 }
 
-/* JS will add this class to trigger the slide */
-.drop.collapsed {
-    max-width: 0px;
-    opacity: 0;
+@media (prefers-reduced-motion: reduce) {
+    #logo-text.animate-in {
+        animation: none;
+    }
+
+    .brand-slogan-hero,
+    .brand-wordmark .logo-gui,
+    .brand-wordmark .logo-full {
+        animation: none;
+        background-position: 0% 50%;
+    }
+
+    .brand-wordmark .logo-gui .logo-char {
+        animation: none;
+    }
 }
 
 .metal-link {
@@ -116,4 +290,220 @@ body {
 
 .fade-in { animation: fadeIn 2s ease-in; }
 @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+
+.logo-hero-container .hero-logo-type {
+    opacity: 0;
+    animation: heroTypeReveal 1.1s cubic-bezier(0.25, 1, 0.5, 1) 0.35s forwards;
+}
+
+@keyframes heroTypeReveal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.logo-hero-container .hero-logo-grays {
+    paint-order: stroke fill;
+}
+
+.logo-hero-container svg {
+    overflow: visible;
+}
+
+.hero-copy {
+    padding-bottom: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo-hero-container .hero-logo-type {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+.service-card {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card.is-open,
+.service-card:hover {
+    border-color: rgba(59, 130, 246, 0.35);
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.45);
+}
+
+.service-card-trigger {
+    width: 100%;
+    text-align: left;
+    padding: 1.75rem;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: inherit;
+}
+
+.service-card-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.65rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    color: #93c5fd;
+    flex-shrink: 0;
+}
+
+.service-card-chevron {
+    transition: transform 0.25s ease;
+    color: #64748b;
+}
+
+.service-card.is-open .service-card-chevron {
+    transform: rotate(180deg);
+    color: #93c5fd;
+}
+
+.service-card-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.service-card.is-open .service-card-panel {
+    max-height: 420px;
+}
+
+.service-card-panel-inner {
+    padding: 0 1.75rem 1.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.service-capability-list {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+}
+
+.faq-card .service-card-trigger {
+    padding: 1.25rem 1.5rem;
+}
+
+.faq-card .service-card-panel-inner {
+    padding-top: 0.25rem;
+}
+
+.faq-card.is-open .service-card-panel {
+    max-height: 320px;
+}
+
+.service-capability-list li {
+    position: relative;
+    padding-left: 1.1rem;
+    color: #94a3b8;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+}
+
+.service-capability-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 9999px;
+    background: #3b82f6;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.65);
+}
+
+.services-multiselect {
+    position: relative;
+}
+
+.services-multiselect-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.65rem 0;
+    border: none;
+    border-bottom: 1px solid #334155;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 0.875rem;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.services-multiselect-trigger:hover,
+.services-multiselect.is-open .services-multiselect-trigger {
+    border-color: #3b82f6;
+    color: #e2e8f0;
+}
+
+.services-multiselect-trigger.has-selection {
+    color: #f8fafc;
+}
+
+.services-multiselect-chevron {
+    flex-shrink: 0;
+    color: #64748b;
+    transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.services-multiselect.is-open .services-multiselect-chevron {
+    transform: rotate(180deg);
+    color: #93c5fd;
+}
+
+.services-multiselect-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 0.35rem);
+    z-index: 60;
+    display: none;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    background: rgba(5, 5, 5, 0.96);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.services-multiselect.is-open .services-multiselect-panel {
+    display: block;
+}
+
+.services-multiselect-option {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 0.65rem;
+    border-radius: 0.5rem;
+    color: #cbd5e1;
+    font-size: 0.8125rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.services-multiselect-option:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.services-multiselect-option input {
+    accent-color: #3b82f6;
+    width: 0.95rem;
+    height: 0.95rem;
+    flex-shrink: 0;
+}
 
