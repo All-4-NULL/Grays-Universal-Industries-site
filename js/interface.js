@@ -153,4 +153,16 @@ document.addEventListener("DOMContentLoaded", () => {
             if (event.key === "Escape") closePanel();
         });
     });
+
+    document.querySelectorAll('form[action="https://api.web3forms.com/submit"]').forEach((form) => {
+        form.addEventListener("submit", (event) => {
+            if (!form.querySelector('.h-captcha[data-captcha="true"]')) return;
+
+            const captchaResponse = form.querySelector('textarea[name="h-captcha-response"]');
+            if (captchaResponse && !captchaResponse.value) {
+                event.preventDefault();
+                alert("Please complete the captcha before sending your message.");
+            }
+        });
+    });
 });

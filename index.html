@@ -140,7 +140,7 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/tailwind.css?v=20260608b">
-    <link rel="stylesheet" href="css/space-style.css?v=20260608b">
+    <link rel="stylesheet" href="css/space-style.css?v=20260611">
 </head>
 <body>
 
@@ -505,11 +505,12 @@
             
             <div class="glass-card p-2 rounded-xl border border-blue-500/20 shadow-2xl shadow-blue-500/10">
                 <div class="bg-[#050505]/90 rounded-lg p-6 text-sm">
-                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
                         <input type="hidden" name="access_key" value="314af9ea-513c-4447-aba2-cfde12f28ac2">
+                        <input type="hidden" name="redirect" value="https://graysuniversal.tech/thank-you.html">
                         <input type="hidden" name="subject" value="New inquiry from graysuniversal.tech">
                         <input type="hidden" name="from_name" value="Grays Universal Industries Website">
-                        
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
                         <div class="flex flex-col lg:flex-row gap-4">
                             <div class="flex-1">
                                 <label for="contact-name" class="text-slate-300 block mb-1 font-medium">Name</label>
@@ -541,6 +542,10 @@
                             <label for="contact-message" class="text-slate-300 block mb-1 font-medium">Message</label>
                             <textarea id="contact-message" name="message" class="w-full bg-transparent border-b border-slate-700 text-white focus:ring-0 focus:border-blue-500 p-0 pb-2 h-24 placeholder:text-slate-600 resize-none" placeholder="What are you looking to build?" required></textarea>
                         </div>
+
+                        <div class="form-captcha">
+                            <div class="h-captcha" data-captcha="true" data-theme="dark"></div>
+                        </div>
                         
                         <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded transition-all mt-4">
                             Send Message
@@ -570,6 +575,7 @@
             </p>
         </footer>   
     <script src="js/space-engine.js?v=20260608b"></script>
-    <script src="js/interface.js?v=20260608b"></script>
+    <script src="js/interface.js?v=20260611"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>

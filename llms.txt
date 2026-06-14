@@ -22,9 +22,9 @@ Website: https://graysuniversal.tech/
 ## Portfolio highlights
 - Ventured Skies (commercial drone website): https://ventured-skies-llc.com
 - Landick Photo and Film (website in development)
-- Nessas Daycare (website in development)
-- GUI Hub (client portal): https://hub.graysuniversal.tech/login/
-- Font 12 (typography web app, in development)
+- Nessas Daycare (childcare website): https://nessasdaycare.com/
+- GUI Hub (client portal, login for existing clients): https://hub.graysuniversal.tech/login/
+- Font 12 (typography web app): https://font12.graysuniversal.tech/login/
 
 ## Pricing
 Projects are quoted individually. There is no public price list on the website.
